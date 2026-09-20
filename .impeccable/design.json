@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-21T00:00:00Z",
+  "title": "Design System: Kaltara Budaya",
+  "extensions": {
+    "colorMeta": {
+      "canopy-deep": {
+        "role": "primary",
+        "displayName": "Kalimantan Canopy",
+        "canonical": "#1a4731",
+        "tonalRamp": ["#052e16", "#0a1f12", "#0f2d1f", "#1a4731", "#246645", "#358a5c", "#59b07c", "#c2dfd4"]
+      },
+      "canopy-dark": {
+        "role": "primary",
+        "displayName": "Canopy Dark",
+        "canonical": "#0f2d1f",
+        "tonalRamp": ["#020f09", "#051a0d", "#0a2617", "#0f2d1f", "#194730", "#276345", "#3f8a60", "#b8d8cb"]
+      },
+      "canopy-void": {
+        "role": "primary",
+        "displayName": "Canopy Void",
+        "canonical": "#1c1028",
+        "tonalRamp": ["#08040f", "#0f0819", "#160c22", "#1c1028", "#2e1c42", "#4a2e6a", "#7c5aa8", "#d8cce8"]
+      },
+      "amber-primary": {
+        "role": "secondary",
+        "displayName": "Amber Gold",
+        "canonical": "#d97706",
+        "tonalRamp": ["#451a03", "#713f12", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fef3c7"]
+      },
+      "amber-light": {
+        "role": "secondary",
+        "displayName": "Amber Light",
+        "canonical": "#fbbf24",
+        "tonalRamp": ["#451a03", "#713f12", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fef9e7"]
+      },
+      "ember-hot": {
+        "role": "tertiary",
+        "displayName": "Ember Hot",
+        "canonical": "#f97316",
+        "tonalRamp": ["#431407", "#7c2d12", "#9a3412", "#c2410c", "#ea580c", "#f97316", "#fb923c", "#ffedd5"]
+      },
+      "body-warm": {
+        "role": "neutral",
+        "displayName": "Body Warm",
+        "canonical": "#fffbeb",
+        "tonalRamp": ["#78350f", "#92400e", "#b45309", "#d97706", "#fef3c7", "#fef9e7", "#fffbeb", "#ffffff"]
+      },
+      "dayak-green": {
+        "role": "semantic",
+        "displayName": "Dayak Forest",
+        "canonical": "#166534",
+        "tonalRamp": ["#052e16", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#86efac", "#dcfce7"]
+      },
+      "banjar-amber": {
+        "role": "semantic",
+        "displayName": "Banjar Amber",
+        "canonical": "#92400e",
+        "tonalRamp": ["#451a03", "#713f12", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fde68a", "#fef3c7"]
+      },
+      "kutai-red": {
+        "role": "semantic",
+        "displayName": "Kutai Red",
+        "canonical": "#991b1b",
+        "tonalRamp": ["#450a0a", "#7f1d1d", "#991b1b", "#b91c1c", "#dc2626", "#f87171", "#fca5a5", "#fee2e2"]
+      },
+      "tidung-blue": {
+        "role": "semantic",
+        "displayName": "Tidung Blue",
+        "canonical": "#1e40af",
+        "tonalRamp": ["#172554", "#1e3a8a", "#1e40af", "#1d4ed8", "#2563eb", "#60a5fa", "#93c5fd", "#dbeafe"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headings on landing and dashboard welcome banners. One per page section." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles, panel headers, exam page titles." },
+      "title": { "displayName": "Title", "purpose": "Card headings, material list items, nav section labels." },
+      "body": { "displayName": "Body", "purpose": "All reading content — materials, question bodies, descriptions." },
+      "label": { "displayName": "Label", "purpose": "UI labels, XP stat captions, pill text, timestamps." }
+    },
+    "shadows": [
+      { "name": "card-lift", "value": "0 16px 40px rgba(0,0,0,0.12)", "purpose": "Card hover only. Never at rest." },
+      { "name": "amber-glow", "value": "0 12px 32px rgba(217,119,6,0.45), 0 4px 16px rgba(0,0,0,0.2)", "purpose": "Primary CTA button hover state exclusively." },
+      { "name": "badge-pulse", "value": "0 0 0 8px rgba(251,191,36,0) — pulsing from 0 0 0 0 rgba(251,191,36,0.4)", "purpose": "Earned badge state. Rings out as a reward signal." },
+      { "name": "panel", "value": "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06)", "purpose": "Stat cards and panels. Structural separation only." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default state transitions (hover, focus)." },
+      { "name": "ease-out-quart", "value": "cubic-bezier(0.25, 1, 0.5, 1)", "purpose": "Entrance animations (fade-in-up, scale-in)." },
+      { "name": "duration-fast", "value": "150ms", "purpose": "Micro-interactions: hover color changes, focus rings." },
+      { "name": "duration-standard", "value": "250ms", "purpose": "Transform and shadow transitions (card lift, button glow)." },
+      { "name": "duration-entrance", "value": "600ms", "purpose": "Scroll-reveal animations." },
+      { "name": "duration-shimmer", "value": "2500ms", "purpose": "XP bar shimmer cycle. Continuous, never interrupted." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action. Amber on canopy-green. Used for register, dashboard entry, exam start.",
+      "html": "<button class=\"ds-btn-primary\">Daftar Gratis →</button>",
+      "css": ".ds-btn-primary { background: #fbbf24; color: #1a4731; font-family: Figtree, sans-serif; font-size: 1rem; font-weight: 700; padding: 16px 32px; border: none; border-radius: 16px; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.2s ease; display: inline-flex; align-items: center; gap: 8px; } .ds-btn-primary:hover { transform: translateY(-2px); background: #f59e0b; box-shadow: 0 12px 32px rgba(217,119,6,0.45), 0 4px 16px rgba(0,0,0,0.2); } .ds-btn-primary:focus-visible { outline: 2px solid #fbbf24; outline-offset: 3px; } .ds-btn-primary:active { transform: translateY(0); } @media (prefers-reduced-motion: reduce) { .ds-btn-primary { transition: background 0.15s; } .ds-btn-primary:hover { transform: none; box-shadow: none; } }"
+    },
+    {
+      "name": "Nav CTA Button",
+      "kind": "button",
+      "refersTo": "button-nav",
+      "description": "Compact amber button for navigation bar. Daftar/Dashboard entry.",
+      "html": "<button class=\"ds-btn-nav\">Masuk Dashboard →</button>",
+      "css": ".ds-btn-nav { background: #fbbf24; color: #1a4731; font-family: Figtree, sans-serif; font-size: 0.875rem; font-weight: 700; padding: 8px 20px; border: none; border-radius: 12px; cursor: pointer; transition: background 0.15s ease, box-shadow 0.2s ease; } .ds-btn-nav:hover { background: #f59e0b; box-shadow: 0 4px 16px rgba(217,119,6,0.3); } .ds-btn-nav:focus-visible { outline: 2px solid #fbbf24; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Nav Link",
+      "kind": "button",
+      "refersTo": null,
+      "description": "Secondary nav link on dark surfaces. No border, text only.",
+      "html": "<a class=\"ds-link-ghost\" href=\"#\">Masuk</a>",
+      "css": ".ds-link-ghost { color: #d1fae5; font-family: Figtree, sans-serif; font-size: 0.875rem; font-weight: 600; padding: 8px 16px; border-radius: 8px; text-decoration: none; transition: color 0.15s, background 0.15s; display: inline-block; } .ds-link-ghost:hover { color: #ffffff; background: rgba(255,255,255,0.1); } .ds-link-ghost:focus-visible { outline: 2px solid rgba(255,255,255,0.5); outline-offset: 2px; }"
+    },
+    {
+      "name": "Dayak Culture Pill",
+      "kind": "chip",
+      "refersTo": "pill-dayak",
+      "description": "Semantic chip for Suku Dayak content tagging. Forest green on light green.",
+      "html": "<span class=\"ds-pill-dayak\">🦅 Suku Dayak</span>",
+      "css": ".ds-pill-dayak { background: #dcfce7; color: #166534; font-family: Figtree, sans-serif; font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 9999px; display: inline-flex; align-items: center; gap: 4px; }"
+    },
+    {
+      "name": "Banjar Culture Pill",
+      "kind": "chip",
+      "refersTo": "pill-banjar",
+      "description": "Semantic chip for Suku Banjar content tagging. Deep amber on light amber.",
+      "html": "<span class=\"ds-pill-banjar\">🎋 Suku Banjar</span>",
+      "css": ".ds-pill-banjar { background: #fef3c7; color: #92400e; font-family: Figtree, sans-serif; font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 9999px; display: inline-flex; align-items: center; gap: 4px; }"
+    },
+    {
+      "name": "Kutai Culture Pill",
+      "kind": "chip",
+      "refersTo": "pill-kutai",
+      "description": "Semantic chip for Suku Kutai content tagging. Deep red on light red.",
+      "html": "<span class=\"ds-pill-kutai\">🐉 Suku Kutai</span>",
+      "css": ".ds-pill-kutai { background: #fee2e2; color: #991b1b; font-family: Figtree, sans-serif; font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 9999px; display: inline-flex; align-items: center; gap: 4px; }"
+    },
+    {
+      "name": "Tidung Culture Pill",
+      "kind": "chip",
+      "refersTo": "pill-tidung",
+      "description": "Semantic chip for Suku Tidung content tagging. Deep blue on light blue.",
+      "html": "<span class=\"ds-pill-tidung\">🌊 Suku Tidung</span>",
+      "css": ".ds-pill-tidung { background: #dbeafe; color: #1e40af; font-family: Figtree, sans-serif; font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 9999px; display: inline-flex; align-items: center; gap: 4px; }"
+    },
+    {
+      "name": "Stat Card",
+      "kind": "card",
+      "refersTo": "stat-card",
+      "description": "Dashboard quick-stat counter. Emoji icon + large number + muted label.",
+      "html": "<div class=\"ds-stat-card\"><p class=\"ds-stat-icon\">📖</p><p class=\"ds-stat-value\">12</p><p class=\"ds-stat-label\">Materi Selesai</p></div>",
+      "css": ".ds-stat-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; text-align: center; transition: transform 0.25s ease, box-shadow 0.25s ease; } .ds-stat-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); } .ds-stat-icon { font-size: 1.875rem; margin-bottom: 4px; } .ds-stat-value { font-family: Figtree, sans-serif; font-size: 1.5rem; font-weight: 800; color: #111827; line-height: 1.2; } .ds-stat-label { font-family: Figtree, sans-serif; font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 4px; } @media (prefers-reduced-motion: reduce) { .ds-stat-card { transition: none; } .ds-stat-card:hover { transform: none; box-shadow: 0 1px 3px rgba(0,0,0,0.08); } }"
+    },
+    {
+      "name": "XP Progress Bar",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The primary reward indicator. Amber shimmer gradient, continuous animation. Only element that animates indefinitely.",
+      "html": "<div class=\"ds-xp-track\"><div class=\"ds-xp-fill\" style=\"width: 65%\"></div></div>",
+      "css": ".ds-xp-track { background: rgba(255,255,255,0.15); border-radius: 9999px; height: 8px; overflow: hidden; } .ds-xp-fill { height: 100%; border-radius: 9999px; background: linear-gradient(90deg, #d97706 0%, #f59e0b 40%, #fbbf24 50%, #f59e0b 60%, #d97706 100%); background-size: 200% 100%; animation: ds-xp-shimmer 2.5s linear infinite; transition: width 1s ease; } @keyframes ds-xp-shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } } @media (prefers-reduced-motion: reduce) { .ds-xp-fill { animation: none; background: #d97706; } }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": null,
+      "description": "Standard form input. Amber focus ring, clean stroke style.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-input-demo\">Nama Lengkap</label><input class=\"ds-input\" id=\"ds-input-demo\" type=\"text\" placeholder=\"Masukkan nama kamu\"></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 6px; } .ds-label { font-family: Figtree, sans-serif; font-size: 0.875rem; font-weight: 600; color: #374151; } .ds-input { font-family: Figtree, sans-serif; font-size: 1rem; color: #111827; background: #ffffff; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; width: 100%; box-sizing: border-box; } .ds-input::placeholder { color: #9ca3af; } .ds-input:focus { border-color: #f59e0b; box-shadow: 0 0 0 3px rgba(245,158,11,0.2); } .ds-input:disabled { background: #f9fafb; color: #9ca3af; cursor: not-allowed; opacity: 0.6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Living Heirloom",
+    "overview": "Kaltara Budaya is not a skin on top of an edtech template — it is a cultural artifact built to be used. Like a woven cloth that belongs to a family, this design system carries identity in every thread: in the forest green that names North Kalimantan's canopy, in the amber gold that runs through Dayak adornment, in the four colors that give each ethnic group its own unmistakable voice. Nothing decorates for decoration's sake. Every pattern, every glow, every texture is load-bearing cultural texture.\n\nThe system must feel earned, not given. Students arrive at this platform as learners in a structured school curriculum; they leave (ideally) as people who know something real about where they are from. The interface should feel like it takes the culture seriously: dense where learning demands density, energetic where games and rewards call for it, still and focused on an exam page. The design serves the learning contract, not the other way around.",
+    "keyCharacteristics": [
+      "Dark canopy green as the primary identity surface — nav, hero, footer, and dashboard headers",
+      "Amber gold as the single primary action accent — CTAs, XP bars, earned states",
+      "Four ethnic culture colors (Dayak/Banjar/Kutai/Tidung) as a semantic system, never decorative",
+      "Figtree across all type roles — single family, weight range 400–900",
+      "Elevation through tonal green layering on brand surfaces; clean flat-then-lift on content surfaces",
+      "Motion that respects the task: state feedback and entrances, never orchestrated page-load sequences"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Amber gold is the reward color. It appears on CTAs, XP bars, and earned states. It is never used for decorative backgrounds, borders, or text styling on content that hasn't been earned. Its scarcity is the signal.", "section": "colors" },
+      { "name": "The Culture Parity Rule", "body": "No ethnic culture color is ever used as a default, fallback, or generic state indicator. Dayak green is never just a green button. Each pill, tag, or label that uses a culture color is explicitly about that culture's content.", "section": "colors" },
+      { "name": "The Muted Text Rule", "body": "#6b7280 (Ink Muted) is forbidden on any surface darker than #ffffff. On canopy-green backgrounds, use rgba(255,255,255,0.7) or green-300 for supporting text.", "section": "colors" },
+      { "name": "The Single Family Rule", "body": "Figtree handles every type role. Never introduce a second family for display or cultural decoration. Weight range 400–900 provides all the contrast the hierarchy needs.", "section": "typography" },
+      { "name": "The Weight Contrast Rule", "body": "Adjacent type elements must differ by at least 200 weight units or 0.25rem in size. Two font-semibold elements at the same size are not a hierarchy — they are noise.", "section": "typography" },
+      { "name": "The Flat-At-Rest Rule", "body": "No surface casts a shadow at rest. Cards, modals, panels, and nav items are flat until state changes (hover, active, earned). Decoration shadows violate the system's legibility principle.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use #1a4731 as the primary brand surface for navigation, heroes, and panel headers.",
+      "Do cap body line length at 65–75ch on material and exam content pages.",
+      "Do use the four culture colors only for content tagged to that culture.",
+      "Do use Figtree 900 weight for display headings, 800 for headlines.",
+      "Do apply amber glow only to primary CTA hover states.",
+      "Do add prefers-reduced-motion alternatives for every animation.",
+      "Do use tonal green layering to create depth on dark surfaces.",
+      "Do ensure body text on dark green backgrounds is white or green-100/green-200."
+    ],
+    "donts": [
+      "Don't build stiff gray layouts, bureaucratic heading hierarchies, or table-heavy screens that look like government procurement portals.",
+      "Don't use background-clip: text gradient text anywhere.",
+      "Don't use border-left greater than 1px as a colored stripe accent on cards or alerts.",
+      "Don't use bounceIn or elastic easing on any animation.",
+      "Don't use #6b7280 (Ink Muted) on any surface darker than white.",
+      "Don't add a second typeface.",
+      "Don't use the amber/gold color system for decorative backgrounds or non-reward elements.",
+      "Don't use identical card grids with the same icon + heading + text pattern across more than three consecutive cards.",
+      "Don't use modal dialogs as the first solution for confirmations or form expansions.",
+      "Don't use glassmorphism on content surfaces or light backgrounds."
+    ]
+  }
+}
