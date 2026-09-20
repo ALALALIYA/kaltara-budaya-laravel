@@ -11,6 +11,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Percayai proxy Railway agar Laravel tahu request aslinya https
+        $middleware->trustProxies(at: '*');
+
         // Alias 'teacher' digunakan di route group Teacher untuk proteksi akses guru
         $middleware->alias([
             'teacher' => \App\Http\Middleware\EnsureUserIsTeacher::class,
