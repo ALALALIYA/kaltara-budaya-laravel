@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             // Kolom role untuk membedakan guru dan siswa
-            $table->enum('role', ['student', 'teacher'])->default('student')->after('password');
+            $table->enum('role', ['student', 'teacher', 'admin'])->default('student')->after('password');
             // Kolom gamifikasi: poin pengalaman, streak harian, waktu aktivitas terakhir, foto profil
             $table->integer('xp')->default(0)->after('role');
             $table->integer('streak')->default(0)->after('xp');
