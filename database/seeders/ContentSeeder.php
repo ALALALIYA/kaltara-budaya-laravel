@@ -14,10 +14,10 @@ class ContentSeeder extends Seeder
     {
         \Illuminate\Support\Facades\Schema::disableForeignKeyConstraints();
 
-        $this->approveMaterials();
-        $this->updateMaterialsKD();
+        // $this->approveMaterials();
+        // $this->updateMaterialsKD();
         $this->updateQuizTimeLimits();
-        $this->updateQuestionExplanations();
+        // $this->updateQuestionExplanations();
         $this->createExamQuizzes();
 
         \Illuminate\Support\Facades\Schema::enableForeignKeyConstraints();
