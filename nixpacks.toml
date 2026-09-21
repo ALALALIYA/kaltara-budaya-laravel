@@ -1,0 +1,11 @@
+# nixpacks.toml — Railway build & start configuration for Laravel + SQLite
+
+[phases.build]
+cmds = [
+    "php artisan config:cache",
+    "php artisan route:cache",
+    "php artisan view:cache"
+]
+
+[start]
+cmd = "sh start.sh"
