@@ -1,9 +1,4 @@
-# nixpacks.toml — Railway build config for Laravel + FrankenPHP
+# nixpacks.toml — Railway build config for Laravel
 
-[phases.seed]
-depends_on = ["build"]
-cmds = [
-    "touch database/database.sqlite",
-    "php artisan migrate --force",
-    "php artisan db:seed --force"
-]
+[start]
+cmd = "php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=$PORT"
