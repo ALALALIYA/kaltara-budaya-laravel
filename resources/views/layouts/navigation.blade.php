@@ -79,7 +79,7 @@
 
                         @else
 
-                            {{-- ── Student primary nav (3 items) ── --}}
+                            {{-- ── Student primary nav (Direct 1-click access for SUS evaluation) ── --}}
                             <a href="{{ route('dashboard') }}"
                                class="px-3 py-2 rounded-lg text-sm font-semibold transition-all {{ request()->routeIs('dashboard') ? 'bg-white/20 text-yellow-400' : 'text-green-100 hover:bg-white/10 hover:text-white' }}">
                                 🏠 Dashboard
@@ -92,9 +92,17 @@
                                class="px-3 py-2 rounded-lg text-sm font-semibold transition-all {{ request()->routeIs('quizzes.*') ? 'bg-white/20 text-yellow-400' : 'text-green-100 hover:bg-white/10 hover:text-white' }}">
                                 🧠 Latihan
                             </a>
+                            <a href="{{ route('exams.index') }}"
+                               class="px-3 py-2 rounded-lg text-sm font-semibold transition-all {{ request()->routeIs('exams.*') ? 'bg-white/20 text-yellow-400' : 'text-green-100 hover:bg-white/10 hover:text-white' }}">
+                                🏆 Ujian
+                            </a>
+                            <a href="{{ route('games.matching') }}"
+                               class="px-3 py-2 rounded-lg text-sm font-semibold transition-all {{ request()->routeIs('games.*') ? 'bg-white/20 text-yellow-400' : 'text-green-100 hover:bg-white/10 hover:text-white' }}">
+                                🎮 Mini Game
+                            </a>
 
-                            {{-- ── Student "Lainnya" dropdown ── --}}
-                            @php $studentMoreActive = request()->routeIs('exams.*', 'games.*', 'questionnaire.*', 'about'); @endphp
+                            {{-- ── Student "Lainnya" dropdown (Secondary features) ── --}}
+                            @php $studentMoreActive = request()->routeIs('projects.*', 'questionnaire.*', 'about'); @endphp
                             <div class="relative">
                                 <button @click="more = !more" @keydown.escape.window="more = false"
                                         :aria-expanded="more.toString()" aria-haspopup="true"
@@ -114,15 +122,6 @@
                                      x-transition:leave-end="opacity-0 scale-95 -translate-y-1"
                                      class="absolute top-full left-0 mt-1.5 w-52 rounded-xl shadow-2xl border border-white/10 py-1.5 z-50"
                                      style="background: rgba(10,22,14,0.98); backdrop-filter: blur(12px);">
-                                    <a href="{{ route('exams.index') }}" @click="more = false"
-                                       class="flex items-center gap-2.5 px-4 py-2 text-sm font-medium transition-colors {{ request()->routeIs('exams.*') ? 'text-yellow-400 bg-white/10' : 'text-green-100 hover:bg-white/10 hover:text-white' }}">
-                                        🏆 Ujian Kompetensi
-                                    </a>
-                                    <a href="{{ route('games.matching') }}" @click="more = false"
-                                       class="flex items-center gap-2.5 px-4 py-2 text-sm font-medium transition-colors {{ request()->routeIs('games.*') ? 'text-yellow-400 bg-white/10' : 'text-green-100 hover:bg-white/10 hover:text-white' }}">
-                                        🎮 Mini Game
-                                    </a>
-
                                     <a href="{{ route('projects.index') }}" @click="more = false"
                                        class="flex items-center gap-2.5 px-4 py-2 text-sm font-medium transition-colors {{ request()->routeIs('projects.*') ? 'text-yellow-400 bg-white/10' : 'text-green-100 hover:bg-white/10 hover:text-white' }}">
                                         🎨 Proyek Akhir

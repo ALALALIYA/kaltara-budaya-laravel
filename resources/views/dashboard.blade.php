@@ -126,8 +126,8 @@
                         🎯
                     </div>
                     <div>
-                        <p class="text-3xl font-black text-gray-900 dark:text-white leading-none mb-1">
-                            {{ $avgScore !== null ? $avgScore . '%' : '-' }}
+                        <p class="{{ $avgScore !== null ? 'text-3xl' : 'text-xl sm:text-2xl' }} font-black text-gray-900 dark:text-white leading-none mb-1">
+                            {{ $avgScore !== null ? $avgScore . '%' : 'Belum Ada' }}
                         </p>
                         <p class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Rata-rata Skor</p>
                     </div>
@@ -148,6 +148,15 @@
                     </a>
                 </div>
 
+                {{--
+                    =======================================================================
+                    TIPS MENGGANTI FOTO BANNER 4 SUKU:
+                    Kamu bisa mengganti link gambar pada properti 'cover' di bawah ini:
+                    1. Menggunakan URL eksternal (misal Unsplash / link web lain).
+                    2. Atau menggunakan file lokal yang ada di public/ atau storage/,
+                       contoh: asset('storage/materials/nama_foto.jpg')
+                    =======================================================================
+                --}}
                 @php
                     $sukuCards = [
                         'dayak' => [
@@ -200,7 +209,7 @@
                             'border'      => 'border-cyan-300 dark:border-cyan-800',
                             'accent'      => 'text-cyan-600 dark:text-cyan-400',
                             'barColor'    => 'bg-cyan-500',
-                            'cover'       => 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+                            'cover'       => 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=800&q=80',
                         ],
                     ];
                 @endphp
