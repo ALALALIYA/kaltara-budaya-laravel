@@ -1,7 +1,6 @@
-# nixpacks.toml — Railway build config for Laravel + SQLite
-# NOTE: Do NOT run php artisan commands here at build time —
-# Railway env vars (APP_KEY, DB_*) are only available at runtime.
-# All artisan commands are handled in start.sh instead.
+# nixpacks.toml — Railway build config for Laravel + FrankenPHP
+# Railway uses FrankenPHP for Laravel apps, not php artisan serve.
+# The full start command below ensures migrate + seed run before FrankenPHP starts.
 
 [start]
-cmd = "sh start.sh"
+cmd = "php artisan migrate --force && php artisan db:seed --force && frankenphp run --config /etc/caddy/Caddyfile"
