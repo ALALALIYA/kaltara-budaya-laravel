@@ -197,6 +197,24 @@
 
     .animate-fade-in-up   { animation: fadeInUp   0.5s ease both; }
     .animate-fade-in-scale { animation: fadeInScale 0.4s ease both; }
+
+    /* ── Cultural Hero & Suku Cards (Bulletproof styling) ── */
+    .hero-cultural-banner {
+        background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #042f2e 100%) !important;
+        color: #ffffff !important;
+    }
+    .suku-card-dayak {
+        background: linear-gradient(135deg, #065f46 0%, #022c22 100%) !important;
+    }
+    .suku-card-banjar {
+        background: linear-gradient(135deg, #b45309 0%, #78350f 100%) !important;
+    }
+    .suku-card-kutai {
+        background: linear-gradient(135deg, #991b1b 0%, #450a0a 100%) !important;
+    }
+    .suku-card-tidung {
+        background: linear-gradient(135deg, #0e7490 0%, #164e63 100%) !important;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -5,15 +5,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-9">
 
             <!-- ── 1. HERO BANNER BUDAYA ETNIK ──────────────────────────────── -->
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-r from-emerald-950 via-green-900 to-teal-950 border border-emerald-700/30">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-emerald-700/40 text-white hero-cultural-banner"
+                 style="background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #042f2e 100%) !important;">
                 <!-- Ornamen Latar Belakang Etnik SVG Pattern -->
                 <div class="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
                     <!-- Radial Glow -->
-                    <div class="absolute -right-16 -top-16 w-96 h-96 rounded-full opacity-20 bg-amber-400 blur-3xl"></div>
-                    <div class="absolute left-1/3 -bottom-20 w-80 h-80 rounded-full opacity-15 bg-emerald-400 blur-2xl"></div>
+                    <div class="absolute -right-16 -top-16 w-96 h-96 rounded-full opacity-25 bg-amber-400 blur-3xl"></div>
+                    <div class="absolute left-1/3 -bottom-20 w-80 h-80 rounded-full opacity-20 bg-emerald-400 blur-2xl"></div>
 
                     <!-- SVG Batik/Dayak Motif Pattern Overlay -->
-                    <svg class="absolute right-0 inset-y-0 h-full w-2/3 opacity-[0.07] text-white" viewBox="0 0 400 400" fill="currentColor">
+                    <svg class="absolute right-0 inset-y-0 h-full w-2/3 opacity-[0.08] text-white" viewBox="0 0 400 400" fill="currentColor">
                         <defs>
                             <pattern id="dayak-mesh" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
                                 <path d="M40 0 L80 40 L40 80 L0 40 Z" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -27,7 +28,6 @@
 
                     <!-- Large Cultural Silhouette Badges -->
                     <div class="absolute right-8 bottom-3 text-8xl sm:text-9xl opacity-10 leading-none">🦅</div>
-                    <div class="absolute right-48 top-4 text-7xl opacity-5 leading-none">🏛️</div>
                 </div>
 
                 <div class="relative px-6 py-9 sm:px-12 sm:py-12">
@@ -40,7 +40,7 @@
                             <h1 class="text-3xl sm:text-5xl font-black text-white leading-tight tracking-tight mb-3">
                                 Selamat Datang, <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-300 to-yellow-400">{{ $user->name }}</span>! 👋
                             </h1>
-                            <p class="text-emerald-100/90 text-sm sm:text-base leading-relaxed mb-6">
+                            <p class="text-emerald-100 text-sm sm:text-base leading-relaxed mb-6">
                                 Mari jelajahi kekayaan adat, tari, musik, dan kearifan lokal <strong class="text-yellow-300 font-bold">Bumi Benuanta</strong>. Kamu telah menuntaskan <strong class="text-white underline decoration-yellow-400 decoration-2 font-black">{{ $completedMaterialCount }} dari {{ $totalMaterials }}</strong> materi pembelajaran.
                             </p>
 
@@ -49,16 +49,16 @@
                                 $currentPct = ($user->xp % 100);
                             @endphp
                             <!-- XP Bar Gamifikasi Modern -->
-                            <div class="bg-black/30 backdrop-blur-md rounded-2xl p-4 border border-white/10 max-w-lg">
+                            <div class="rounded-2xl p-4 border border-white/10 max-w-lg" style="background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px);">
                                 <div class="flex justify-between items-center text-xs font-extrabold mb-2">
                                     <span class="flex items-center gap-1.5 text-yellow-300">
                                         <span class="text-base">⚡</span> Level {{ $currentLevel }} Penjelajah
                                     </span>
                                     <span class="text-emerald-300 font-mono">{{ $user->xp % 100 }} / 100 XP menuju Lv. {{ $currentLevel + 1 }}</span>
                                 </div>
-                                <div class="w-full h-3.5 bg-emerald-950/80 rounded-full overflow-hidden p-0.5 border border-white/10">
-                                    <div class="h-full rounded-full bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 shadow-sm transition-all duration-1000"
-                                         style="width: {{ $currentPct }}%"></div>
+                                <div class="w-full h-3.5 bg-black/50 rounded-full overflow-hidden p-0.5 border border-white/10">
+                                    <div class="h-full rounded-full shadow-sm transition-all duration-1000"
+                                         style="width: {{ $currentPct }}%; background: linear-gradient(90deg, #eab308, #f59e0b, #fbbf24);"></div>
                                 </div>
                             </div>
                         </div>
@@ -66,21 +66,23 @@
                         <!-- Sisi Kanan: Kartu Gamifikasi XP & Streak Glassmorphism -->
                         <div class="flex flex-row sm:flex-col lg:flex-row gap-4 shrink-0">
                             <!-- Kartu XP -->
-                            <div class="flex-1 sm:flex-none rounded-2xl p-5 text-center min-w-[130px] bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:border-yellow-400/50 transition-all hover:scale-105">
+                            <div class="flex-1 sm:flex-none rounded-2xl p-5 text-center min-w-[130px] border border-white/20 shadow-lg hover:border-yellow-400/50 transition-all hover:scale-105"
+                                 style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(8px);">
                                 <div class="w-12 h-12 rounded-full bg-yellow-400/20 text-yellow-300 flex items-center justify-center text-2xl mx-auto mb-2 shadow-inner">
                                     ⚡
                                 </div>
                                 <p class="text-3xl sm:text-4xl font-black text-yellow-300 tracking-tight">{{ number_format($user->xp) }}</p>
-                                <p class="text-yellow-100/80 text-xs font-bold uppercase tracking-wider mt-1">Total XP</p>
+                                <p class="text-yellow-100/90 text-xs font-bold uppercase tracking-wider mt-1">Total XP</p>
                             </div>
 
                             <!-- Kartu Streak -->
-                            <div class="flex-1 sm:flex-none rounded-2xl p-5 text-center min-w-[130px] bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:border-orange-400/50 transition-all hover:scale-105">
+                            <div class="flex-1 sm:flex-none rounded-2xl p-5 text-center min-w-[130px] border border-white/20 shadow-lg hover:border-orange-400/50 transition-all hover:scale-105"
+                                 style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(8px);">
                                 <div class="w-12 h-12 rounded-full bg-orange-400/20 text-orange-300 flex items-center justify-center text-2xl mx-auto mb-2 shadow-inner">
                                     🔥
                                 </div>
                                 <p class="text-3xl sm:text-4xl font-black text-orange-300 tracking-tight">{{ $user->streak }}</p>
-                                <p class="text-orange-100/80 text-xs font-bold uppercase tracking-wider mt-1">Hari Streak</p>
+                                <p class="text-orange-100/90 text-xs font-bold uppercase tracking-wider mt-1">Hari Streak</p>
                             </div>
                         </div>
                     </div>
@@ -153,48 +155,52 @@
                             'sub'         => 'Kenyah, Kayan, Lundayeh, Punan',
                             'desc'        => 'Tradisi pedalaman, Tari Hudoq, Seni Mandau, dan Rumah Lamin.',
                             'icon'        => '🦅',
-                            'theme'       => 'from-emerald-700 to-green-900',
+                            'gradient'    => 'linear-gradient(135deg, #065f46 0%, #022c22 100%)',
+                            'cssClass'    => 'suku-card-dayak',
                             'badge'       => 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300',
                             'border'      => 'border-emerald-300 dark:border-emerald-800',
                             'accent'      => 'text-emerald-600 dark:text-emerald-400',
                             'barColor'    => 'bg-emerald-500',
-                            'cover'       => 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80',
+                            'cover'       => 'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=800&q=80',
                         ],
                         'banjar' => [
                             'name'        => 'Suku Banjar',
                             'sub'         => 'Musik Panting, Madihin & Sasirangan',
                             'desc'        => 'Irama musik panting, kuliner soto, dan kerajinan kain sasirangan.',
                             'icon'        => '🎋',
-                            'theme'       => 'from-amber-600 to-yellow-800',
+                            'gradient'    => 'linear-gradient(135deg, #b45309 0%, #78350f 100%)',
+                            'cssClass'    => 'suku-card-banjar',
                             'badge'       => 'bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300',
                             'border'      => 'border-amber-300 dark:border-amber-800',
                             'accent'      => 'text-amber-600 dark:text-amber-400',
                             'barColor'    => 'bg-amber-500',
-                            'cover'       => 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80',
+                            'cover'       => 'https://images.unsplash.com/photo-1609137144822-263a758784d1?auto=format&fit=crop&w=800&q=80',
                         ],
                         'kutai' => [
                             'name'        => 'Suku Kutai',
                             'sub'         => 'Tari Jepen, Keraton & Akulturasi Melayu',
                             'desc'        => 'Keanggunan gerak tari jepen, musik gambus, dan tradisi kesultanan.',
                             'icon'        => '🐉',
-                            'theme'       => 'from-rose-700 to-red-950',
+                            'gradient'    => 'linear-gradient(135deg, #991b1b 0%, #450a0a 100%)',
+                            'cssClass'    => 'suku-card-kutai',
                             'badge'       => 'bg-rose-100 text-rose-800 dark:bg-rose-900/60 dark:text-rose-300',
                             'border'      => 'border-rose-300 dark:border-rose-800',
                             'accent'      => 'text-rose-600 dark:text-rose-400',
                             'barColor'    => 'bg-rose-500',
-                            'cover'       => 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80',
+                            'cover'       => 'https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=800&q=80',
                         ],
                         'tidung' => [
                             'name'        => 'Suku Tidung',
                             'sub'         => 'Suku Laut, Iraw Tengkayu & Rumah Baloy',
                             'desc'        => 'Ritual pelarung padaw tuju dulung, arsitektur baloy mayo, dan pesisir.',
                             'icon'        => '🌊',
-                            'theme'       => 'from-cyan-700 to-blue-950',
+                            'gradient'    => 'linear-gradient(135deg, #0e7490 0%, #164e63 100%)',
+                            'cssClass'    => 'suku-card-tidung',
                             'badge'       => 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/60 dark:text-cyan-300',
                             'border'      => 'border-cyan-300 dark:border-cyan-800',
                             'accent'      => 'text-cyan-600 dark:text-cyan-400',
                             'barColor'    => 'bg-cyan-500',
-                            'cover'       => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80',
+                            'cover'       => 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
                         ],
                     ];
                 @endphp
@@ -206,20 +212,22 @@
                         @endphp
                         <div class="group relative rounded-3xl overflow-hidden bg-white dark:bg-gray-800 border {{ $card['border'] }} shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5">
                             <!-- Card Header Image Background -->
-                            <div class="relative h-36 overflow-hidden bg-gradient-to-br {{ $card['theme'] }}">
+                            <div class="relative h-40 overflow-hidden {{ $card['cssClass'] }}" style="background: {{ $card['gradient'] }};">
                                 <img src="{{ $card['cover'] }}" alt="{{ $card['name'] }}"
-                                     class="w-full h-full object-cover opacity-35 mix-blend-overlay group-hover:scale-110 transition-transform duration-700">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                                     class="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-110 transition-all duration-700"
+                                     loading="lazy"
+                                     onerror="this.style.display='none'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
 
                                 <!-- Badge Icon & Suku -->
                                 <div class="absolute top-3 left-3">
-                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white shadow">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-black/60 backdrop-blur-md text-white border border-white/20 shadow">
                                         <span>{{ $card['icon'] }}</span> {{ $card['name'] }}
                                     </span>
                                 </div>
 
                                 <div class="absolute bottom-3 left-4 right-4 text-white">
-                                    <p class="text-xs font-medium text-white/80 truncate">{{ $card['sub'] }}</p>
+                                    <p class="text-xs font-semibold text-amber-300 truncate">{{ $card['sub'] }}</p>
                                 </div>
                             </div>
 
@@ -370,10 +378,17 @@
                                     @if($mat->image)
                                         <img src="{{ Str::startsWith($mat->image, 'http') ? $mat->image : asset('storage/' . $mat->image) }}"
                                              alt="{{ $mat->title }}"
-                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                             loading="lazy"
+                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                        <div class="w-full h-full hidden items-center justify-center text-4xl text-white"
+                                             style="background: linear-gradient(135deg, #064e3b, #0f2d1f);">
+                                            {{ $mat->category_icon ?? '🏛️' }}
+                                        </div>
                                     @else
-                                        <div class="w-full h-full flex items-center justify-center text-4xl bg-emerald-900 text-white">
-                                            🏛️
+                                        <div class="w-full h-full flex items-center justify-center text-4xl text-white"
+                                             style="background: linear-gradient(135deg, #064e3b, #0f2d1f);">
+                                            {{ $mat->category_icon ?? '🏛️' }}
                                         </div>
                                     @endif
 
