@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('image')->nullable(); // Path gambar cover materi
             $table->string('video_url')->nullable(); // URL video YouTube
             // Kategori suku di Kalimantan Utara
-            $table->enum('category', ['dayak', 'banjar', 'kutai', 'tidung']);
+            $table->enum('category', ['dayak', 'banjar', 'kutai', 'tidung'])->nullable();
             // Guru yang membuat materi ini
             $table->foreignId('teacher_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
