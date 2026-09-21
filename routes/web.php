@@ -183,4 +183,23 @@ Route::middleware(['auth', 'verified', 'admin'])
             ->name('users.destroy');
     });
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/admin/recover-photos', function () {
+        $images = collect(scandir(storage_path('app/public/materials')))
+            ->filter(fn($file) => in_array(pathinfo($file, PATHINFO_EXTENSION), ['jpg', 'png', 'jpeg', 'webp']))
+            ->values();
+        $materials = \App\Models\Material::all();
+        return view('admin.recover_photos', compact('images', 'materials'));
+    })->name('admin.recover_photos');
+
+    Route::post('/admin/recover-photos', function (\Illuminate\Http\Request $request) {
+        foreach ($request->input('mappings', []) as $image => $materialId) {
+            if ($materialId) {
+                \App\Models\Material::where('id', $materialId)->update(['image' => 'materials/' . $image]);
+            }
+        }
+        return redirect()->back()->with('success', 'Berhasil memasangkan foto dengan materi!');
+    })->name('admin.recover_photos.save');
+});
+
 require __DIR__.'/auth.php';
