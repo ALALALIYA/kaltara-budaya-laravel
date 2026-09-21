@@ -5,11 +5,11 @@
 
             <!-- Logo + Desktop Nav -->
             <div class="flex items-center">
-                <a href="{{ route('dashboard') }}" class="shrink-0 flex items-center gap-2 mr-6">
-                    <span class="text-3xl float-slow" aria-hidden="true">🌿</span>
-                    <div class="hidden sm:block">
-                        <span class="text-white font-black text-lg tracking-tight">Kaltara</span>
-                        <span class="text-yellow-400 font-black text-lg tracking-tight ml-1">Budaya</span>
+                <a href="{{ route('dashboard') }}" class="shrink-0 flex items-center gap-2 mr-4 sm:mr-6">
+                    <span class="text-2xl sm:text-3xl float-slow" aria-hidden="true">🌿</span>
+                    <div class="flex items-center">
+                        <span class="text-white font-black text-base sm:text-lg tracking-tight">Kaltara</span>
+                        <span class="text-yellow-400 font-black text-base sm:text-lg tracking-tight ml-1">Budaya</span>
                     </div>
                 </a>
 
@@ -197,13 +197,22 @@
                 @endauth
             </div>
 
-            <!-- Mobile Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
+            <!-- Mobile Controls (Dark Toggle + Hamburger) -->
+            <div class="-me-2 flex items-center gap-1 sm:hidden">
+                <!-- Dark/Light toggle for mobile -->
+                <button @click="$store.theme.toggle()"
+                        class="w-9 h-9 flex items-center justify-center rounded-lg text-green-200 hover:bg-white/10 transition"
+                        :aria-label="$store.theme.dark ? 'Aktifkan mode terang' : 'Aktifkan mode gelap'"
+                        :title="$store.theme.dark ? 'Mode Terang' : 'Mode Gelap'">
+                    <span x-show="!$store.theme.dark" class="text-lg" aria-hidden="true">🌙</span>
+                    <span x-show="$store.theme.dark" class="text-lg" aria-hidden="true">☀️</span>
+                </button>
+
                 <button @click="open = !open"
                         :aria-expanded="open.toString()"
                         aria-controls="mobile-menu"
                         aria-label="Buka menu navigasi"
-                        class="inline-flex items-center justify-center p-2 rounded-lg text-green-300 hover:text-white hover:bg-white/10 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-yellow-400 focus-visible:outline-offset-2">
+                        class="inline-flex items-center justify-center p-2 rounded-lg text-green-300 hover:text-white hover:bg-white/10 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-yellow-400">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                         <path :class="{'hidden': open}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': !open}" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
